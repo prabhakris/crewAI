@@ -5,6 +5,10 @@ through collaborative intelligence.
 
 Note: Forked from crewAIInc/crewAI for personal learning and experimentation.
 See: https://github.com/crewAIInc/crewAI for the upstream project.
+
+Personal fork notes:
+- Experimenting with custom agent memory configurations
+- Testing pipeline branching patterns
 """
 
 from crewai.agent import Agent
