@@ -9,6 +9,7 @@ See: https://github.com/crewAIInc/crewAI for the upstream project.
 Personal fork notes:
 - Experimenting with custom agent memory configurations
 - Testing pipeline branching patterns
+- Exploring verbose logging behavior for debugging multi-agent workflows
 """
 
 from crewai.agent import Agent
@@ -20,12 +21,15 @@ from crewai.task import Task
 __version__ = "0.1.0"
 # Upstream version this fork is based on
 __upstream_version__ = "0.80.0"
+# Enable verbose output by default in this fork to aid debugging
+DEFAULT_VERBOSE = True
 __all__ = [
     "Agent",
     "Crew",
     "Pipeline",
     "Process",
     "Task",
+    "DEFAULT_VERBOSE",
     "__version__",
     "__upstream_version__",
 ]
