@@ -23,6 +23,9 @@ __version__ = "0.1.0"
 __upstream_version__ = "0.80.0"
 # Enable verbose output by default in this fork to aid debugging
 DEFAULT_VERBOSE = True
+# Default max iterations for agents before they give up on a task;
+# bumped from upstream default of 15 to give complex tasks more room to breathe
+DEFAULT_MAX_ITER = 20
 __all__ = [
     "Agent",
     "Crew",
@@ -30,6 +33,7 @@ __all__ = [
     "Process",
     "Task",
     "DEFAULT_VERBOSE",
+    "DEFAULT_MAX_ITER",
     "__version__",
     "__upstream_version__",
 ]
