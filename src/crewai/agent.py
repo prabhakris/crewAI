@@ -37,8 +37,9 @@ class Agent(BaseModel):
         default_factory=list,
         description="List of tools available to the agent.",
     )
+    # Personal preference: default verbose to True so I can see what's happening during dev
     verbose: bool = Field(
-        default=False,
+        default=True,
         description="Enable verbose logging of agent actions.",
     )
     allow_delegation: bool = Field(
@@ -82,20 +83,4 @@ class Agent(BaseModel):
             raise ValueError("max_iter must be a positive integer.")
         return value
 
-    @model_validator(mode="after")
-    def set_default_llm(self) -> "Agent":
-        """Set a default LLM string if none is provided."""
-        if self.llm is None:
-            self.llm = "gpt-4"
-        return self
-
-    def __repr__(self) -> str:
-        return f"Agent(role={self.role!r}, goal={self.goal!r})"
-
-    def __str__(self) -> str:
-        return f"Agent: {self.role}"
-
-    @property
-    def key(self) -> str:
-        """Return a unique key for this agent based on role and goal."""
-        return f"{self.role}_{self.goal}".lower().replace(" ", "_")
+    @model_vali
