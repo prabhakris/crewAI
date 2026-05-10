@@ -26,6 +26,10 @@ DEFAULT_VERBOSE = True
 # Default max iterations for agents before they give up on a task;
 # bumped from upstream default of 15 to give complex tasks more room to breathe
 DEFAULT_MAX_ITER = 20
+# Default max RPM (requests per minute) for agents; set to None to disable
+# rate limiting during local testing. Upstream default is None but some
+# deployments override this — keeping explicit here as a reminder.
+DEFAULT_MAX_RPM = None
 __all__ = [
     "Agent",
     "Crew",
@@ -34,6 +38,7 @@ __all__ = [
     "Task",
     "DEFAULT_VERBOSE",
     "DEFAULT_MAX_ITER",
+    "DEFAULT_MAX_RPM",
     "__version__",
     "__upstream_version__",
 ]
