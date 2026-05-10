@@ -81,6 +81,7 @@ class Agent(BaseModel):
         """Ensure max_iter is a positive integer."""
         if value <= 0:
             raise ValueError("max_iter must be a positive integer.")
+        # Personal note: cap at 50 to avoid runaway loops during experimentation
+        if value > 50:
+            raise ValueError("max_iter must not exceed 50.")
         return value
-
-    @model_vali
